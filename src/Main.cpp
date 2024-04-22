@@ -7,25 +7,23 @@ int main(int argc, char *argv[])
 	if (initWindow())
 	{
 		MainMenu menu;
-
+		GameOver gameOver;
 		if (menu.show())
 		{
-			Game *game=new Game();
-			game->run();
-			delete game;
-			GameOver gameOver;
-			while (gameOver.show())
+			do
 			{
-				Game *game=new Game();
+				Game *game = new Game();
 				game->run();
-				if(game->isQuit()) {
+				if (game->isQuit())
+				{
 					delete game;
 					break;
 				}
 				delete game;
-			}
+			} while (gameOver.show());
 		}
 	}
+
 	closeWindow();
 	return 0;
 }

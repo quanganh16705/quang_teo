@@ -6,8 +6,8 @@ Game::Game()
     quit = false;
     dir = Direction::None;
     nextDir = Direction::None;
-    snake.push_front({INIT_HEAD.x+1, INIT_HEAD.y});
-    snake.push_front({INIT_HEAD.x,INIT_HEAD.y});
+    snake.push_front({INIT_HEAD.x + 1, INIT_HEAD.y});
+    snake.push_front({INIT_HEAD.x, INIT_HEAD.y});
     generateFood(food);
     food.w = CELL_SIZE;
     food.h = CELL_SIZE;
@@ -119,33 +119,31 @@ void Game::update()
     }
 
     // Check collision with food
+
+    // Check collision with wall
+    if (newHead.x < 0)
+        newHead.x = GRID_SIZE - 1;
+    else if (newHead.x >= GRID_SIZE)
+        newHead.x = 0;
+
+    if (newHead.y < 0)
+        newHead.y = GRID_SIZE - 1;
+    else if (newHead.y >= GRID_SIZE)
+        newHead.y = 0;
     SDL_Rect head = {
         newHead.x * CELL_SIZE,
         newHead.y * CELL_SIZE,
         CELL_SIZE,
-        CELL_SIZE
-    };
+        CELL_SIZE};
     if (checkCollision(head, food))
     {
-        Mix_PlayChannel( -1, eat_fx, 0 );
+        Mix_PlayChannel(-1, eat_fx, 0);
         generateFood(food);
     }
     else
     {
         snake.pop_back();
     }
-
-    // Check collision with wall
-if (newHead.x < 0)
-    newHead.x = GRID_SIZE- 1;
-else if (newHead.x >= SCREEN_WIDTH)
-    newHead.x = 0;
-
-if (newHead.y < 0)
-    newHead.y = GRID_SIZE - 1;
-else if (newHead.y >= SCREEN_HEIGHT)
-    newHead.y = 0;
-
     // Check collision with self
     for (auto &seg : snake)
     {
