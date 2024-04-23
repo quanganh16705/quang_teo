@@ -41,6 +41,7 @@ void MainMenu::render()
     SDL_SetRenderDrawColor(gRenderer, 0, 0, 0, 255);
     SDL_RenderClear(gRenderer);
     SDL_RenderCopy(gRenderer, back_ground, NULL, NULL);
+    //nhấp nháy
     if (SDL_GetTicks() % 1000 > 300)
     {
         SDL_RenderCopy(gRenderer, waiter_text, NULL, &waiter_text_rect);

@@ -97,6 +97,7 @@ void Game::update()
     // enhance snake movespeed
     SPEED = DEFAULT_SPEED - snake.size() / 3;
     dir = nextDir;
+    
     // Move the snake
     SnakeSegment newHead = snake.front();
     switch (dir)
@@ -149,10 +150,7 @@ void Game::update()
         Mix_PlayChannel(-1, eat_fx, 0);
         generateFood(food);
     }
-    else
-    {
-        snake.pop_back();
-    }
+    else snake.pop_back();
     // Check collision with self
     for (auto &seg : snake)
     {

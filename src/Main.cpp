@@ -11,7 +11,6 @@ int main(int argc, char *argv[])
 		GameOver gameOver;
 		if (menu.show())
 		{
-			
 			do
 			{
 				ModeSelect modeSelect;;
