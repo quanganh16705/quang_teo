@@ -1,7 +1,7 @@
 # Snake
 - link preview game : [youtube]()
 # Cài đặt
-- bản chạy được luôn : tải daptho.rar và giải nén từ [release](https://github.com/quanganh16705/quang_teo/releases/tag/release)
+- bản chạy được luôn : tải snake.rar và giải nén từ [release](https://github.com/quanganh16705/quang_teo/releases/tag/release)
 - bản chạy qua mã nguồn : clone repo hoặc Code -> download zip </br>
 B1: Cài đặt makefile for window và mingw </br>
 B2: Mở cmd rồi  cd đến folder src và gõ lệnh make
