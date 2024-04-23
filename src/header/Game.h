@@ -19,4 +19,5 @@ private:
     bool game_over;
     bool quit;
     Mix_Chunk* eat_fx;
+   
 };

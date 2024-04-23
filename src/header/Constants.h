@@ -20,6 +20,7 @@ const int DEFAULT_SPEED = 120;
 extern SDL_Window *gWindow;
 extern SDL_Renderer *gRenderer;
 extern int SPEED ;
+extern bool wallMode;
 struct SnakeSegment
 {
     int x, y;

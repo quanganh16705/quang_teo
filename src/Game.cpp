@@ -118,18 +118,27 @@ void Game::update()
         break;
     }
 
-    // Check collision with food
-
     // Check collision with wall
-    if (newHead.x < 0)
-        newHead.x = GRID_SIZE - 1;
-    else if (newHead.x >= GRID_SIZE)
-        newHead.x = 0;
+    if (wallMode)
+    {
+        if (newHead.x < 0 || newHead.x >= GRID_SIZE || newHead.y < 0 || newHead.y >= GRID_SIZE)
+        {
+            game_over = true;
+            return;
+        }
+    }
+    else
+    {
+        if (newHead.x < 0)
+            newHead.x = GRID_SIZE - 1;
+        else if (newHead.x >= GRID_SIZE)
+            newHead.x = 0;
 
-    if (newHead.y < 0)
-        newHead.y = GRID_SIZE - 1;
-    else if (newHead.y >= GRID_SIZE)
-        newHead.y = 0;
+        if (newHead.y < 0)
+            newHead.y = GRID_SIZE - 1;
+        else if (newHead.y >= GRID_SIZE)
+            newHead.y = 0;
+    }
     SDL_Rect head = {
         newHead.x * CELL_SIZE,
         newHead.y * CELL_SIZE,
