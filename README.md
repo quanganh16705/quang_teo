@@ -1,5 +1,5 @@
 # Snake
-- link preview game : [youtube]()
+- link preview game : [youtube](https://www.youtube.com/watch?v=Unx1dosIpzY)
 # Cài đặt
 - bản chạy được luôn : tải snake.rar và giải nén từ [release](https://github.com/quanganh16705/quang_teo/releases/tag/release)
 - bản chạy qua mã nguồn : clone repo hoặc Code -> download zip </br>
